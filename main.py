@@ -13,11 +13,11 @@ def count_batteries_by_health(present_capacities):
 
     # clasification
     if 80<=soh<=100:
-      d["healthy"]+=1
+      batteries["healthy"]+=1
     elif 62<=soh<80:
-      d["exchange"]+=1
+      batteries["exchange"]+=1
     else:
-      d["failed"]+=1
+      batteries["failed"]+=1
       
   return batteries
 
