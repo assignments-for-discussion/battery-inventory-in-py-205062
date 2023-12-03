@@ -1,10 +1,26 @@
 
 def count_batteries_by_health(present_capacities):
-  return {
+  # declaring dictionary to store batteries count
+  batteries = {
     "healthy": 0,
     "exchange": 0,
     "failed": 0
   }
+  
+  for i in present_capacities:
+    # calculating SoH
+    soh = 100 * i/120
+
+    # clasification
+    if 80<=soh<=100:
+      batteries["healthy"]+=1
+    elif 62<=soh<80:
+      batteries["exchange"]+=1
+    else:
+      batteries["failed"]+=1
+      
+  return batteries
+
 
 
 def test_bucketing_by_health():
